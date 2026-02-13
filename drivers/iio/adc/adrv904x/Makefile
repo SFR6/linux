@@ -92,4 +92,12 @@ ccflags-y += -I$(srctree)/$(src)/devices/adrv904x/private/include/ \
 	-DADRV904X_BITFIELD_VALUE_CHECK=0 \
 	-DADI_ADRV904X_API_VERSION_RANGE_CHECK=0
 
+# Suppress warnings for vendor API files
+CFLAGS_devices/adrv904x/public/src/adi_adrv904x_cpu.o := -Wno-vla -Wno-frame-larger-than
+CFLAGS_devices/adrv904x/public/src/adi_adrv904x_cals.o := -Wno-frame-larger-than
+CFLAGS_devices/adrv904x/private/src/adrv904x_dfe_cpu.o := -Wframe-larger-than=2048
+CFLAGS_devices/adrv904x/private/src/adrv904x_carrier_reconfigure.o := -Wframe-larger-than=2048
+CFLAGS_devices/adrv904x/public/src/adi_adrv904x_dfe_utilities.o := -Wframe-larger-than=2048
+CFLAGS_common/adi_error/adi_common_error.o := -Wno-format
+
 obj-$(CONFIG_ADRV904X) += adrv904x_drv.o
