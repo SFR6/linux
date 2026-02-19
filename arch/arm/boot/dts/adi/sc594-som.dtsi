@@ -183,19 +183,14 @@
 			reg = <0x40000 0xC0000>;
 		};
 
-		qspi_2: partition@2 {
-			label = "U-Boot Environment";
-			reg = <0x100000 0x20000>;
+		qspi_2: partition@3 {
+			label = "Kernel";
+			reg = <0x00100000 0xF00000>;
 		};
 
-		qspi_3: partition@3 {
-			label = "FIT Image";
-			reg = <0x120000 0xF00000>;
-		};
-
-		qspi_4: partition@4 {
-			label = "JFFS2 Formatted RFS";
-			reg = <0x1020000 0x2FE0000>;
+		qspi_3: partition@4 {
+			label = "Rootfs";
+			reg = <0x1000000 0x03000000>;
 		};
 
 	};
@@ -239,19 +234,14 @@
 				reg = <0x40000 0xC0000>;
 			};
 
-			ospi_2: partition@2 {
-				label = "U-Boot Environment";
-				reg = <0x100000 0x20000>;
+			ospi_2: partition@3 {
+				label = "Kernel";
+				reg = <0x100000 0xF00000>;
 			};
 
-			ospi_3: partition@3 {
-				label = "FIT Image";
-				reg = <0x120000 0xF00000>;
-			};
-
-			ospi_4: partition@4 {
-				label = "JFFS2 Formatted RFS";
-				reg = <0x1020000 0xFE0000>;
+			ospi_3: partition@4 {
+				label = "Rootfs";
+				reg = <0x01000000 0x1000000>;
 			};
 		};
 	};

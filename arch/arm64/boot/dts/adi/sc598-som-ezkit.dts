@@ -57,18 +57,13 @@
 			};
 
 			ospi_2: partition@2 {
-				label = "U-Boot Environment";
-				reg = <0x100000 0x20000>;
+				label = "FIT Image";
+				reg = <0x100000 0xF00000>;
 			};
 
 			ospi_3: partition@3 {
-				label = "FIT Image";
-				reg = <0x120000 0xF00000>;
-			};
-
-			ospi_4: partition@4 {
-				label = "JFFS2 Formatted RFS";
-				reg = <0x1020000 0xFE0000>;
+				label = "Rootfs";
+				reg = <0x1000000 0x1000000>;
 			};
 		};
 	};
